@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const navLink =
-  "text-sm font-semibold text-slate-600 transition-colors hover:text-[#1b4332]";
+  "text-sm font-semibold text-slate-600 transition-colors hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400";
 
 const THEME_KEY = "rd_public_theme";
 const LANG_KEY = "rd_public_lang";
@@ -76,8 +76,8 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
   const dash = user ? homePathForRole(user.role) : null;
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#f8faf9] text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-      <header className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/90 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/90">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <header className="sticky top-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-md dark:border-emerald-500/10">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
           <Link
             href="/"
@@ -180,14 +180,14 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
             {user ? (
               <Link
                 href={dash ?? "/tenant"}
-                className="rounded-full bg-[#1b4332] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0d2818] dark:bg-emerald-600 dark:hover:bg-emerald-500"
+                className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/30 transition hover:shadow-lg hover:shadow-primary/50 hover:brightness-110"
               >
                 Dashboard
               </Link>
             ) : (
               <Link
                 href="/register"
-                className="rounded-full bg-[#1b4332] px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0d2818] dark:bg-emerald-600 dark:hover:bg-emerald-500"
+                className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/30 transition hover:shadow-lg hover:shadow-primary/50 hover:brightness-110"
               >
                 Get started
               </Link>
@@ -195,12 +195,12 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <div className="flex border-t border-slate-100 px-4 py-2 dark:border-slate-800 lg:hidden">
+        <div className="flex border-t border-border/50 px-4 py-2 lg:hidden">
           <nav className="flex w-full flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold">
-            <Link href="/listings" className="text-[#1b4332] dark:text-emerald-400">
+            <Link href="/listings" className="text-primary">
               Browse
             </Link>
-            <Link href="/#how-it-works" className="text-slate-600 dark:text-slate-400">
+            <Link href="/#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
               How it works
             </Link>
             <Link href="/#pricing" className="text-slate-600 dark:text-slate-400">
@@ -219,7 +219,7 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
                 </Link>
                 <Link
                   href="/register"
-                  className="ml-auto rounded-full bg-[#1b4332] px-3 py-1 text-white dark:bg-emerald-600"
+                  className="ml-auto rounded-lg bg-primary px-3 py-1 text-primary-foreground shadow-md shadow-primary/30 transition hover:brightness-110"
                 >
                   Get started
                 </Link>
@@ -227,7 +227,7 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
             ) : (
               <Link
                 href={dash ?? "/tenant"}
-                className="ml-auto rounded-full bg-[#1b4332] px-3 py-1 text-white dark:bg-emerald-600"
+                className="ml-auto rounded-lg bg-primary px-3 py-1 text-primary-foreground shadow-md shadow-primary/30 transition hover:brightness-110"
               >
                 Dashboard
               </Link>
@@ -238,7 +238,7 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8">{children}</main>
 
-      <footer className="mt-auto border-t border-slate-200 bg-white py-10 text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
+      <footer className="mt-auto border-t border-border/50 bg-card/50 py-10 text-muted-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
           <div>
             <Link href="/" className="inline-block rounded-xl ring-1 ring-slate-900/5 transition hover:ring-sky-400/20">
@@ -249,10 +249,10 @@ export function PublicChrome({ children }: { children: React.ReactNode }) {
             </p>
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Product</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Product</p>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <Link href="/listings" className="hover:text-[#1b4332] dark:hover:text-emerald-400">
+                <Link href="/listings" className="hover:text-primary transition-colors">
                   Browse properties
                 </Link>
               </li>
