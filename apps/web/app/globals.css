@@ -4,56 +4,59 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 160 84% 30%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 6% 10%;
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
-    --accent: 240 5% 96%;
-    --accent-foreground: 240 6% 10%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 160 84% 30%;
-    --radius: 0.65rem;
-    --chart-1: 160 70% 45%;
-    --chart-2: 200 80% 50%;
-    --chart-3: 280 65% 55%;
-    --chart-4: 35 90% 55%;
-    --chart-5: 340 75% 52%;
+    /* Dark navy premium theme */
+    --background: 222 42% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 37% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 37% 11%;
+    --popover-foreground: 210 40% 98%;
+    /* Emerald green primary accent */
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 20% 4%;
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 210 20% 55%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 20% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 4%;
+    --border: 222 30% 18%;
+    --input: 222 30% 16%;
+    --ring: 160 84% 39%;
+    --radius: 0.75rem;
+    --chart-1: 160 84% 39%;
+    --chart-2: 210 80% 45%;
+    --chart-3: 280 70% 55%;
+    --chart-4: 43 96% 56%;
+    --chart-5: 340 82% 58%;
   }
 
+  /* Default to dark theme */
   .dark {
-    --background: 222 47% 6%;
+    --background: 222 42% 7%;
     --foreground: 210 40% 98%;
-    --card: 222 41% 9%;
+    --card: 222 37% 11%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 41% 9%;
+    --popover: 222 37% 11%;
     --popover-foreground: 210 40% 98%;
-    --primary: 158 64% 42%;
-    --primary-foreground: 210 20% 6%;
-    --secondary: 217 33% 14%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 210 20% 4%;
+    --secondary: 222 30% 16%;
     --secondary-foreground: 210 40% 96%;
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 58%;
-    --accent: 217 33% 16%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 33% 16%;
-    --input: 217 33% 16%;
-    --ring: 158 64% 42%;
-    --chart-1: 158 64% 48%;
-    --chart-2: 199 89% 48%;
-    --chart-3: 280 70% 58%;
+    --muted: 222 30% 16%;
+    --muted-foreground: 210 20% 55%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 210 20% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 4%;
+    --border: 222 30% 18%;
+    --input: 222 30% 16%;
+    --ring: 160 84% 39%;
+    --chart-1: 160 84% 39%;
+    --chart-2: 210 80% 45%;
+    --chart-3: 280 70% 55%;
     --chart-4: 43 96% 56%;
     --chart-5: 340 82% 58%;
   }
@@ -65,5 +68,40 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    @apply dark;
+  }
+}
+
+@layer components {
+  /* Premium glassmorphism cards */
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl;
+  }
+
+  .glass-card-elevated {
+    @apply glass-card shadow-lg hover:shadow-xl hover:bg-white/10 transition-all duration-300;
+  }
+
+  /* Premium gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-600 bg-clip-text text-transparent;
+  }
+
+  /* Smooth focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Premium button base */
+  .btn-premium {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-smooth focus-ring;
   }
 }

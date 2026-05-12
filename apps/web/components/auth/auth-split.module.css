@@ -1,4 +1,4 @@
-/* RentDirect auth — brand #1b4332 / #f8faf9, refined split card */
+/* RentDirect auth — premium dark navy + emerald green */
 
 .page {
   min-height: 100svh;
@@ -7,8 +7,8 @@
   justify-content: center;
   padding: 1.25rem 1rem 2rem;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(27 67 50 / 0.08), transparent),
-    #f8faf9;
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(16 185 129 / 0.12), transparent),
+    #0f172a;
 }
 
 .pageInner {
@@ -23,12 +23,12 @@
   min-height: min(600px, calc(100svh - 5rem));
   overflow: hidden;
   border-radius: 20px;
-  background: #fff;
-  border: 1px solid rgb(15 23 42 / 0.06);
+  background: #1a2332;
+  border: 1px solid rgb(16 185 129 / 0.2);
   box-shadow:
-    0 1px 2px rgb(15 23 42 / 0.04),
-    0 24px 48px -12px rgb(15 23 42 / 0.12),
-    0 0 0 1px rgb(255 255 255 / 0.8) inset;
+    0 1px 2px rgb(0 0 0 / 0.4),
+    0 24px 48px -12px rgb(0 0 0 / 0.45),
+    inset 0 0 30px rgb(16 185 129 / 0.08);
 }
 
 .hero {
@@ -37,7 +37,7 @@
   padding: 2.75rem 2.25rem;
   color: #fff;
   overflow: hidden;
-  background: linear-gradient(160deg, #1b4332 0%, #163d30 38%, #0d2818 100%);
+  background: linear-gradient(160deg, #1e3a3a 0%, #1a2f32 38%, #0f1b20 100%);
 }
 
 .heroPattern {
@@ -131,7 +131,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: rgb(255 255 255 / 0.62);
+  color: rgb(255 255 255 / 0.72);
   max-width: 20rem;
 }
 
@@ -139,8 +139,8 @@
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgb(134 239 172 / 0.85);
-  box-shadow: 0 0 10px rgb(134 239 172 / 0.45);
+  background: #10b981;
+  box-shadow: 0 0 10px rgb(16 185 129 / 0.65);
 }
 
 .heroBack {
@@ -212,7 +212,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg, #fff 0%, #fafcfb 100%);
+  background: linear-gradient(180deg, #1a2332 0%, #141f2a 100%);
   max-height: calc(100svh - 5rem);
   overflow-y: auto;
 }
@@ -251,22 +251,22 @@
   font-weight: 800;
   letter-spacing: 0.06em;
   color: #fff;
-  background: linear-gradient(145deg, #1b4332, #0d2818);
-  box-shadow: 0 2px 8px rgb(27 67 50 / 0.25);
+  background: linear-gradient(145deg, #10b981, #059669);
+  box-shadow: 0 2px 12px rgb(16 185 129 / 0.35);
 }
 
 .brandMarkText {
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #0f172a;
+  color: #f0fdfa;
 }
 
 .formTitle {
   font-size: 1.625rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #0f172a;
+  color: #f0fdfa;
   line-height: 1.2;
   margin-bottom: 0.4rem;
 }
@@ -274,7 +274,7 @@
 .formSubtitle {
   font-size: 0.875rem;
   line-height: 1.55;
-  color: #64748b;
+  color: #cbd5e1;
   max-width: 36rem;
 }
 
@@ -288,19 +288,19 @@
 .formFooter {
   margin-top: 1.75rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgb(15 23 42 / 0.06);
+  border-top: 1px solid rgb(148 163 184 / 0.12);
 }
 
 .pageLegal {
   margin-top: 1.25rem;
   text-align: center;
   font-size: 0.75rem;
-  color: #94a3b8;
+  color: #64748b;
   line-height: 1.5;
 }
 
 .pageLegal a {
-  color: #1b4332;
+  color: #6ee7b7;
   font-weight: 600;
   text-decoration: none;
 }
@@ -315,7 +315,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #475569;
+  color: #cbd5e1;
   margin-bottom: 0.4rem;
 }
 
@@ -328,7 +328,7 @@
 .inputIcon {
   position: absolute;
   left: 0.875rem;
-  color: #94a3b8;
+  color: #64748b;
   pointer-events: none;
   display: flex;
 }
@@ -338,10 +338,10 @@
   height: 2.75rem;
   padding: 0 0.875rem 0 2.65rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  background: #fff;
+  border: 1px solid #334155;
+  background: rgb(15 23 42 / 0.55);
   font-size: 0.9375rem;
-  color: #0f172a;
+  color: #f0fdfa;
   outline: none;
   transition:
     border-color 0.18s ease,
@@ -350,16 +350,17 @@
 }
 
 .field::placeholder {
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .field:hover {
-  border-color: #cbd5e1;
+  border-color: #475569;
+  background: rgb(15 23 42 / 0.7);
 }
 
 .field:focus {
-  border-color: #1b4332;
-  box-shadow: 0 0 0 3px rgb(27 67 50 / 0.14);
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgb(16 185 129 / 0.2);
 }
 
 .fieldPassword {
@@ -378,15 +379,15 @@
   height: 2.25rem;
   border: none;
   background: transparent;
-  color: #64748b;
+  color: #94a3b8;
   cursor: pointer;
   border-radius: 8px;
   transition: color 0.15s ease, background 0.15s ease;
 }
 
 .togglePw:hover {
-  color: #1b4332;
-  background: rgb(27 67 50 / 0.06);
+  color: #6ee7b7;
+  background: rgb(16 185 129 / 0.1);
 }
 
 .rowBetween {
@@ -404,9 +405,23 @@
   gap: 0.5rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #475569;
+  color: #cbd5e1;
   cursor: pointer;
   user-select: none;
+}
+
+.remember input {
+  accent-color: #10b981;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+}
+
+.bodyText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
 }
 
 .remember input {
@@ -419,13 +434,14 @@
 .linkMuted {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #1b4332;
+  color: #10b981;
   text-decoration: none;
 }
 
 .linkMuted:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: #6ee7b7;
 }
 
 .btnPrimary {
@@ -438,16 +454,19 @@
   font-size: 0.9375rem;
   letter-spacing: -0.01em;
   cursor: pointer;
-  background: linear-gradient(180deg, #1b4332 0%, #153d30 100%);
-  color: #fff;
+  background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+  color: #0f172a;
   box-shadow:
     0 1px 0 rgb(255 255 255 / 0.12) inset,
-    0 4px 14px rgb(27 67 50 / 0.28);
+    0 4px 14px rgb(16 185 129 / 0.35);
   transition: filter 0.15s ease, transform 0.12s ease;
 }
 
 .btnPrimary:hover:not(:disabled) {
-  filter: brightness(1.06);
+  filter: brightness(1.08);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.12) inset,
+    0 8px 24px rgb(16 185 129 / 0.45);
 }
 
 .btnPrimary:active:not(:disabled) {
@@ -464,7 +483,7 @@
   align-items: center;
   gap: 0.875rem;
   margin: 1.375rem 0 1.125rem;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -476,7 +495,7 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+  background: linear-gradient(90deg, transparent, #475569, transparent);
 }
 
 .btnOutline {
@@ -486,9 +505,9 @@
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  background: #fff;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
+  background: rgb(15 23 42 / 0.4);
+  color: #cbd5e1;
+  border: 1px solid #475569;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -506,14 +525,14 @@
   text-transform: uppercase;
   padding: 0.2rem 0.45rem;
   border-radius: 6px;
-  background: rgb(15 23 42 / 0.06);
-  color: #64748b;
+  background: rgb(255 255 255 / 0.08);
+  color: #94a3b8;
 }
 
 .btnOutline:hover:not(:disabled) {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #334155;
+  background: #334155;
+  border-color: #64748b;
+  color: #f1f5f9;
 }
 
 .btnOutline:disabled {
@@ -525,18 +544,19 @@
   margin: 0;
   text-align: center;
   font-size: 0.875rem;
-  color: #64748b;
+  color: #cbd5e1;
 }
 
 .footerNote a {
   font-weight: 700;
-  color: #1b4332;
+  color: #10b981;
   text-decoration: none;
 }
 
 .footerNote a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
+  color: #6ee7b7;
 }
 
 .error {
@@ -550,12 +570,12 @@
   margin-top: 0.875rem;
   padding: 0.75rem 0.875rem;
   border-radius: 12px;
-  border: 1px solid rgb(239 68 68 / 0.25);
-  background: rgb(254 242 242 / 0.95);
+  border: 1px solid rgb(248 113 113 / 0.35);
+  background: rgb(127 29 29 / 0.25);
   font-size: 0.8125rem;
   line-height: 1.45;
   font-weight: 500;
-  color: #b91c1c;
+  color: #fecaca;
 }
 
 .fieldBlock {
@@ -604,8 +624,8 @@
   text-align: left;
   padding: 0.75rem 0.8rem;
   border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  background: #fff;
+  border: 1px solid #334155;
+  background: rgb(15 23 42 / 0.45);
   cursor: pointer;
   transition:
     border-color 0.15s ease,
@@ -614,14 +634,14 @@
 }
 
 .roleBtn:hover {
-  border-color: #cbd5e1;
-  background: #f8fafc;
+  border-color: #475569;
+  background: #1e293b;
 }
 
 .roleBtnActive {
-  border-color: #1b4332;
-  background: rgb(240 253 250 / 0.85);
-  box-shadow: 0 0 0 2px rgb(27 67 50 / 0.12);
+  border-color: #10b981;
+  background: rgb(15 23 42 / 0.85);
+  box-shadow: 0 0 0 2px rgb(16 185 129 / 0.2);
 }
 
 .roleBtnRow {
@@ -638,24 +658,25 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 8px;
-  background: rgb(15 23 42 / 0.05);
-  color: #1b4332;
+  background: rgb(255 255 255 / 0.06);
+  color: #6ee7b7;
 }
 
 .roleBtnActive .roleBtnIcon {
-  background: rgb(27 67 50 / 0.12);
+  background: rgb(16 185 129 / 0.15);
+  color: #10b981;
 }
 
 .roleBtnTitle {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #f0fdfa;
 }
 
 .roleBtnHint {
   font-size: 0.6875rem;
   line-height: 1.35;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .roleBtnTextCol {

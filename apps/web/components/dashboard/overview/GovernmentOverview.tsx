@@ -17,8 +17,8 @@ export function GovernmentOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Government console</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Government console</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
           Read-only visibility into housing, tax, and compliance — aligned with your design board.
         </p>
       </div>
@@ -36,15 +36,15 @@ export function GovernmentOverview() {
             href={c.href}
             className={cn(
               rdGlassCard,
-              "group flex flex-col gap-3 p-5 transition hover:border-[#00C853]/25",
+              "group flex flex-col gap-3 p-5 transition hover:border-primary/40",
             )}
           >
-            <c.Icon className="h-8 w-8 text-[#00C853]" />
+            <c.Icon className="h-8 w-8 text-primary" />
             <div>
-              <p className="font-bold text-white">{c.title}</p>
-              <p className="mt-1 text-sm text-slate-400">{c.body}</p>
+              <p className="font-bold text-foreground">{c.title}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{c.body}</p>
             </div>
-            <span className="text-xs font-bold text-[#00C853] group-hover:underline">Open →</span>
+            <span className="text-xs font-bold text-primary group-hover:underline">Open →</span>
           </Link>
         ))}
       </div>
@@ -54,12 +54,12 @@ export function GovernmentOverview() {
           title="Roadmap & phases"
           subtitle="Program delivery view"
           action={
-            <Link href="/government/roadmap" className="text-xs font-bold text-[#00C853] hover:underline">
+            <Link href="/government/roadmap" className="text-xs font-bold text-primary hover:text-primary/80 transition-colors">
               View roadmap
             </Link>
           }
         />
-        <div className={cn(rdGlassCard, "p-6 text-sm text-slate-400")}>
+        <div className={cn(rdGlassCard, "p-6 text-sm text-muted-foreground")}>
           Connect your platform roadmap API to replace this panel with live milestones, owners, and risk flags.
         </div>
       </section>

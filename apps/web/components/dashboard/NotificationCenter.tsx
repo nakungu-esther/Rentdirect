@@ -27,7 +27,7 @@ export function NotificationCenter({
 
   return (
     <div className={cn("space-y-6", className)}>
-      <p className="max-w-2xl text-sm leading-relaxed text-slate-400">{intro}</p>
+      <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{intro}</p>
       <div className="flex flex-wrap gap-2" role="toolbar" aria-label="Notification types">
         {chips.map((label) => {
           const active = filter === label;
@@ -39,8 +39,8 @@ export function NotificationCenter({
               className={cn(
                 "rounded-full px-3 py-1.5 text-sm font-semibold transition-colors",
                 active
-                  ? "bg-[#00C853] text-[#0B111B]"
-                  : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white",
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground",
               )}
             >
               {label}
@@ -48,8 +48,8 @@ export function NotificationCenter({
           );
         })}
       </div>
-      <div className="rounded-2xl border border-white/[0.08] bg-[#1F2937]/85 p-8 shadow-xl shadow-black/30 backdrop-blur-xl">
-        <p className="text-sm text-slate-400">
+      <div className="rounded-xl border border-primary/20 bg-card/50 p-8 shadow-lg shadow-primary/10 backdrop-blur-xl">
+        <p className="text-sm text-muted-foreground">
           {filter === "All"
             ? "No notifications yet. When events arrive, they will be grouped by type here."
             : `No ${filter.toLowerCase()} right now for this filter.`}

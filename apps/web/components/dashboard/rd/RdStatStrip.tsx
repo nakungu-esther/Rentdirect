@@ -17,14 +17,14 @@ export function RdStatStrip({ stats }: { stats: RdStatItem[] }) {
       {stats.map((s) => {
         const inner = (
           <>
-            <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{s.label}</p>
-            <p className="mt-1 text-xl font-bold tabular-nums tracking-tight text-white">{s.value}</p>
-            {s.hint ? <p className="mt-1 text-xs text-slate-500">{s.hint}</p> : null}
+            <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{s.label}</p>
+            <p className="mt-1 text-xl font-bold tabular-nums tracking-tight text-foreground">{s.value}</p>
+            {s.hint ? <p className="mt-1 text-xs text-muted-foreground">{s.hint}</p> : null}
           </>
         );
-        const cls = cn(rdGlassInner, "p-4 transition hover:border-[#00C853]/25 hover:bg-[#1F2937]/90");
+        const cls = cn(rdGlassInner, "p-4 transition hover:border-primary/40 hover:bg-primary/5");
         return s.href ? (
-          <Link key={s.label} href={s.href} className={cn(cls, "block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00C853]/50")}>
+          <Link key={s.label} href={s.href} className={cn(cls, "block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50")}>
             {inner}
           </Link>
         ) : (

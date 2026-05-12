@@ -82,7 +82,7 @@ export function DashboardShell({
           <div className="flex min-h-0 flex-1">
             <main
               data-rd-workspace
-              className="min-h-0 flex-1 overflow-y-auto bg-[#0B111B] px-4 py-6 sm:px-6 lg:px-8 [&_h1]:!text-white [&_h1+p]:!text-slate-400"
+              className="min-h-0 flex-1 overflow-y-auto bg-gradient-to-b from-background to-background/95 px-4 py-6 sm:px-6 lg:px-8 [&_h1]:!text-foreground [&_h1+p]:!text-muted-foreground"
             >
               <div className="mx-auto max-w-[1400px]">{children}</div>
             </main>
