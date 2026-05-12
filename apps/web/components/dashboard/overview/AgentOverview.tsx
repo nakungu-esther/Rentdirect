@@ -29,7 +29,7 @@ const KANBAN = [
   { col: "Contacted", count: 5, color: "border-violet-500/30 bg-violet-500/5" },
   { col: "Viewing", count: 4, color: "border-amber-500/30 bg-amber-500/5" },
   { col: "Negotiating", count: 2, color: "border-orange-500/30 bg-orange-500/5" },
-  { col: "Closed", count: 3, color: "border-[#00C853]/40 bg-[#00C853]/8" },
+  { col: "Closed", count: 3, color: "border-primary/40 bg-primary/8" },
 ];
 
 const TOP_LISTINGS = [
@@ -51,10 +51,10 @@ export function AgentOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           {user?.fullName ?? "Agent"} workspace
         </h1>
-        <p className="mt-1 text-sm text-slate-400">Pipeline, commissions, and high-intent listings.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Pipeline, commissions, and high-intent listings.</p>
       </div>
 
       <RdStatStrip stats={stats} />
@@ -64,16 +64,16 @@ export function AgentOverview() {
           title="Leads pipeline"
           subtitle="Kanban-style stages — connect CRM for live cards"
           action={
-            <Link href="/agent/leads" className="text-xs font-bold text-[#00C853] hover:underline">
+            <Link href="/agent/leads" className="text-xs font-bold text-primary hover:text-primary/80 transition-colors">
               Open leads
             </Link>
           }
         />
         <div className="grid gap-3 overflow-x-auto pb-2 sm:grid-cols-5">
           {KANBAN.map((k) => (
-            <div key={k.col} className={cn("min-w-[140px] rounded-2xl border p-3", k.color)}>
-              <p className="text-[10px] font-bold uppercase tracking-wide text-slate-400">{k.col}</p>
-              <p className="mt-2 text-2xl font-bold text-white">{k.count}</p>
+            <div key={k.col} className={cn("min-w-[140px] rounded-xl border p-3", k.color)}>
+              <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">{k.col}</p>
+              <p className="mt-2 text-2xl font-bold text-foreground">{k.count}</p>
             </div>
           ))}
         </div>
@@ -90,14 +90,14 @@ export function AgentOverview() {
                 <YAxis tick={{ fill: "#94a3b8", fontSize: 11 }} axisLine={false} tickLine={false} width={28} />
                 <Tooltip
                   contentStyle={{
-                    background: "#1F2937",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: "hsl(var(--card))",
+                    border: "1px solid hsl(var(--border))",
                     borderRadius: "10px",
                     fontSize: "12px",
-                    color: "#f1f5f9",
+                    color: "hsl(var(--foreground))",
                   }}
                 />
-                <Line type="monotone" dataKey="v" stroke="#00C853" strokeWidth={2.5} dot={false} />
+                <Line type="monotone" dataKey="v" stroke="hsl(var(--primary))" strokeWidth={2.5} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -107,10 +107,10 @@ export function AgentOverview() {
           <RdSectionTitle title="Top properties" subtitle="By engagement" />
           <ul className="space-y-3">
             {TOP_LISTINGS.map((l) => (
-              <li key={l.title} className="rounded-xl border border-white/5 bg-white/[0.03] px-3 py-2.5">
-                <p className="font-semibold text-white">{l.title}</p>
-                <p className="mt-1 text-xs text-slate-500">
-                  {l.views} views · <span className="text-[#00C853]">{l.deal}</span>
+              <li key={l.title} className="rounded-lg border border-primary/15 bg-primary/5 px-3 py-2.5">
+                <p className="font-semibold text-foreground">{l.title}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {l.views} views · <span className="text-primary">{l.deal}</span>
                 </p>
               </li>
             ))}

@@ -51,10 +51,10 @@ export function LandlordOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           {user?.fullName ?? "Landlord"} portfolio
         </h1>
-        <p className="mt-1 text-sm text-slate-400">Revenue, occupancy, and tenant pipeline at a glance.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Revenue, occupancy, and tenant pipeline at a glance.</p>
       </div>
 
       <RdStatStrip stats={stats} />
@@ -70,14 +70,14 @@ export function LandlordOverview() {
                 <YAxis tick={{ fill: "#94a3b8", fontSize: 11 }} axisLine={false} tickLine={false} width={32} />
                 <Tooltip
                   contentStyle={{
-                    background: "#1F2937",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: "hsl(var(--card))",
+                    border: "1px solid hsl(var(--border))",
                     borderRadius: "10px",
                     fontSize: "12px",
-                    color: "#f1f5f9",
+                    color: "hsl(var(--foreground))",
                   }}
                 />
-                <Line type="monotone" dataKey="v" stroke="#00C853" strokeWidth={2.5} dot={false} name="Revenue" />
+                <Line type="monotone" dataKey="v" stroke="hsl(var(--primary))" strokeWidth={2.5} dot={false} name="Revenue" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -89,14 +89,14 @@ export function LandlordOverview() {
             {APPLICANTS.map((a) => (
               <li
                 key={a.name}
-                className="flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.03] p-3"
+                className="flex items-start gap-3 rounded-lg border border-primary/15 bg-primary/5 p-3"
               >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#00C853]/15 text-[#00C853]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
                   <User className="h-4 w-4" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-semibold text-white">{a.name}</p>
-                  <p className="text-xs text-slate-500">{a.unit}</p>
+                  <p className="truncate font-semibold text-foreground">{a.name}</p>
+                  <p className="text-xs text-muted-foreground">{a.unit}</p>
                   <span className="mt-1 inline-block rounded-md bg-amber-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-400">
                     {a.status}
                   </span>
@@ -106,7 +106,7 @@ export function LandlordOverview() {
           </ul>
           <Link
             href="/landlord/applications"
-            className="mt-4 block text-center text-xs font-bold text-[#00C853] hover:underline"
+            className="mt-4 block text-center text-xs font-bold text-primary hover:text-primary/80 transition-colors"
           >
             View all applications
           </Link>
@@ -119,17 +119,17 @@ export function LandlordOverview() {
           {PROPERTIES.map((p) => (
             <div key={p.name} className="flex flex-col gap-2 py-4 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:gap-6">
               <div className="min-w-0 flex-1 sm:w-48">
-                <p className="font-semibold text-white">{p.name}</p>
-                <p className="text-xs text-slate-500">Occupancy</p>
+                <p className="font-semibold text-foreground">{p.name}</p>
+                <p className="text-xs text-muted-foreground">Occupancy</p>
               </div>
               <div className="flex flex-1 items-center gap-3">
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-800">
+                <div className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
                   <div
-                    className="h-full rounded-full bg-[#00C853] transition-all"
+                    className="h-full rounded-full bg-primary transition-all"
                     style={{ width: `${p.occ}%` }}
                   />
                 </div>
-                <span className="w-10 text-right text-sm font-bold tabular-nums text-[#00C853]">{p.occ}%</span>
+                <span className="w-10 text-right text-sm font-bold tabular-nums text-primary">{p.occ}%</span>
               </div>
             </div>
           ))}
