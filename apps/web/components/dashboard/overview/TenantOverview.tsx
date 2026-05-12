@@ -33,8 +33,8 @@ export function TenantOverview() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Welcome back, {first}</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Welcome back, {first}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
           Find, rent, and pay — your workspace matches the RentDirect design system.
         </p>
       </div>
@@ -50,7 +50,7 @@ export function TenantOverview() {
               action={
                 <Link
                   href="/tenant/contracts"
-                  className="text-xs font-bold text-[#00C853] hover:underline"
+                  className="text-xs font-bold text-primary hover:text-primary/80 transition-colors"
                 >
                   View contracts
                 </Link>
@@ -58,25 +58,25 @@ export function TenantOverview() {
             />
             <div className={cn(rdGlassCard, "overflow-hidden")}>
               <div className="grid gap-0 md:grid-cols-5">
-                <div className="relative aspect-[16/10] bg-gradient-to-br from-slate-800 to-slate-900 md:col-span-2 md:min-h-[200px]">
-                  <Home className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-slate-600" />
+                <div className="relative aspect-[16/10] bg-gradient-to-br from-secondary to-secondary/50 md:col-span-2 md:min-h-[200px]">
+                  <Home className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-muted-foreground" />
                 </div>
                 <div className="flex flex-col justify-center gap-4 p-6 md:col-span-3">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Active unit</p>
-                    <p className="mt-1 text-lg font-bold text-white">Kampala · 2 bed apartment</p>
-                    <p className="mt-2 flex items-center gap-2 text-sm text-slate-400">
-                      <Calendar className="h-4 w-4 text-[#00C853]" />
-                      Next rent due <span className="font-semibold text-white">Apr 5</span>
+                    <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Active unit</p>
+                    <p className="mt-1 text-lg font-bold text-foreground">Kampala · 2 bed apartment</p>
+                    <p className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4 text-primary" />
+                      Next rent due <span className="font-semibold text-foreground">Apr 5</span>
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <p className="text-2xl font-bold tabular-nums text-[#00C853]">UGX 2,800,000</p>
-                    <span className="text-xs text-slate-500">/ month</span>
+                    <p className="text-2xl font-bold tabular-nums text-primary">UGX 2,800,000</p>
+                    <span className="text-xs text-muted-foreground">/ month</span>
                   </div>
                   <Link
                     href="/tenant/payments/new"
-                    className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#00C853] px-5 py-2.5 text-sm font-bold text-[#0B111B] shadow-lg shadow-[#00C853]/20 transition hover:bg-[#00e05c]"
+                    className="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-lg hover:shadow-primary/50 hover:brightness-110"
                   >
                     <CreditCard className="h-4 w-4" />
                     Pay rent
@@ -91,7 +91,7 @@ export function TenantOverview() {
               title="Recommended for you"
               subtitle="Based on your saves and search radius"
               action={
-                <Link href="/tenant/search" className="text-xs font-bold text-[#00C853] hover:underline">
+                <Link href="/tenant/search" className="text-xs font-bold text-primary hover:text-primary/80 transition-colors">
                   Browse all
                 </Link>
               }
@@ -103,13 +103,13 @@ export function TenantOverview() {
                   href="/tenant/search"
                   className={cn(
                     rdGlassCard,
-                    "min-w-[240px] max-w-[260px] shrink-0 p-4 transition hover:border-[#00C853]/30",
+                    "min-w-[240px] max-w-[260px] shrink-0 p-4 transition hover:border-primary/40",
                   )}
                 >
-                  <div className="aspect-[16/10] rounded-lg bg-gradient-to-br from-slate-800 to-slate-900" />
-                  <p className="mt-3 font-semibold text-white">{p.title}</p>
-                  <p className="mt-1 text-xs text-slate-500">{p.beds} bedrooms</p>
-                  <p className="mt-2 text-sm font-bold text-[#00C853]">{p.price}</p>
+                  <div className="aspect-[16/10] rounded-lg bg-gradient-to-br from-secondary to-secondary/50" />
+                  <p className="mt-3 font-semibold text-foreground">{p.title}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{p.beds} bedrooms</p>
+                  <p className="mt-2 text-sm font-bold text-primary">{p.price}</p>
                 </Link>
               ))}
             </div>
@@ -124,21 +124,21 @@ export function TenantOverview() {
                 <span
                   className={cn(
                     "mt-1 h-2 w-2 shrink-0 rounded-full",
-                    a.tone === "pay" && "bg-[#00C853]",
-                    a.tone === "ok" && "bg-sky-400",
+                    a.tone === "pay" && "bg-primary",
+                    a.tone === "ok" && "bg-blue-400",
                     a.tone === "info" && "bg-amber-400",
                   )}
                 />
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wide text-slate-500">{a.t}</p>
-                  <p className="mt-0.5 text-sm text-slate-300">{a.msg}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">{a.t}</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground/80">{a.msg}</p>
                 </div>
               </div>
             ))}
           </div>
           <Link
             href="/tenant/notifications"
-            className="flex items-center justify-center gap-2 rounded-xl border border-white/10 py-3 text-sm font-semibold text-slate-300 transition hover:border-[#00C853]/30 hover:text-white"
+            className="flex items-center justify-center gap-2 rounded-lg border border-primary/20 py-3 text-sm font-semibold text-foreground transition hover:border-primary/50 hover:bg-primary/5"
           >
             View all activity
             <ArrowRight className="h-4 w-4" />

@@ -76,6 +76,12 @@ const config: Config = {
       },
       boxShadow: {
         card: "0 0 0 1px hsl(var(--border) / 0.5), 0 12px 40px -24px rgb(0 0 0 / 0.65)",
+        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 0 0 1px rgba(255, 255, 255, 0.1)",
+        "glass-lg": "0 12px 40px -24px rgba(0, 0, 0, 0.65), inset 0 0 0 1px rgba(255, 255, 255, 0.1)",
+        "glass-hover": "0 16px 48px -24px rgba(0, 0, 0, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.2)",
+      },
+      backdropBlur: {
+        glass: "12px",
       },
     },
   },

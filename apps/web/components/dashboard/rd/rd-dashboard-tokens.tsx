@@ -1,17 +1,17 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** RentDirect workspace — matches design board (dark shell + emerald accent). */
+/** RentDirect workspace — premium dark navy + emerald green theme */
 export const rdWorkspace = cn(
-  "min-h-screen bg-[#0B111B] font-[family-name:var(--font-poppins)] text-slate-100 antialiased",
+  "min-h-screen bg-background font-[family-name:var(--font-poppins)] text-foreground antialiased",
 );
 
 export const rdGlassCard = cn(
-  "rounded-2xl border border-white/[0.08] bg-[#1F2937]/85 shadow-xl shadow-black/30 backdrop-blur-xl",
+  "rounded-xl border border-emerald-500/20 bg-white/[0.04] shadow-lg shadow-emerald-500/10 backdrop-blur-xl hover:shadow-emerald-500/20 transition-all duration-300",
 );
 
 export const rdGlassInner = cn(
-  "rounded-xl border border-white/[0.06] bg-[#1F2937]/60 backdrop-blur-md",
+  "rounded-lg border border-emerald-500/15 bg-white/[0.02] backdrop-blur-md",
 );
 
 export function RdSectionTitle({
@@ -26,8 +26,8 @@ export function RdSectionTitle({
   return (
     <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h2 className="text-lg font-bold tracking-tight text-white">{title}</h2>
-        {subtitle ? <p className="text-sm text-slate-400">{subtitle}</p> : null}
+        <h2 className="text-lg font-bold tracking-tight text-foreground">{title}</h2>
+        {subtitle ? <p className="text-sm text-muted-foreground">{subtitle}</p> : null}
       </div>
       {action ? <div className="shrink-0">{action}</div> : null}
     </div>
