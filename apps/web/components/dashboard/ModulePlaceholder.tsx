@@ -7,9 +7,9 @@ export function ModulePlaceholder({
   description?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-white/[0.08] bg-[#1F2937]/85 p-8 shadow-xl shadow-black/30 backdrop-blur-xl">
-      <h1 className="text-2xl font-bold tracking-tight text-white">{title}</h1>
-      <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-400">{description}</p>
+    <div className="rounded-xl border border-primary/20 bg-card/50 p-8 shadow-lg shadow-primary/10 backdrop-blur-xl">
+      <h1 className="text-2xl font-bold tracking-tight text-foreground">{title}</h1>
+      <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">{description}</p>
     </div>
   );
 }
