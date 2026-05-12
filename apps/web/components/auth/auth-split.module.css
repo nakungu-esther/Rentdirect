@@ -1,0 +1,872 @@
+/* RentDirect auth — brand #1b4332 / #f8faf9, refined split card */
+
+.page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem 2rem;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(27 67 50 / 0.08), transparent),
+    #f8faf9;
+}
+
+.pageInner {
+  width: 100%;
+  max-width: 980px;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 980px;
+  min-height: min(600px, calc(100svh - 5rem));
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid rgb(15 23 42 / 0.06);
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.04),
+    0 24px 48px -12px rgb(15 23 42 / 0.12),
+    0 0 0 1px rgb(255 255 255 / 0.8) inset;
+}
+
+.hero {
+  flex: 1 1 44%;
+  position: relative;
+  padding: 2.75rem 2.25rem;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1b4332 0%, #163d30 38%, #0d2818 100%);
+}
+
+.heroPattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.45;
+  background-image:
+    radial-gradient(circle at 18% 22%, rgb(255 255 255 / 0.12) 0%, transparent 42%),
+    radial-gradient(circle at 82% 78%, rgb(45 106 79 / 0.35) 0%, transparent 50%),
+    linear-gradient(
+      125deg,
+      transparent 48%,
+      rgb(255 255 255 / 0.03) 49%,
+      rgb(255 255 255 / 0.03) 51%,
+      transparent 52%
+    );
+  background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+  max-width: 24rem;
+}
+
+.heroKicker {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.72);
+}
+
+.heroTitle {
+  font-size: clamp(1.875rem, 3.8vw, 2.375rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.heroLead {
+  margin-top: 0.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 0.78);
+  max-width: 22rem;
+}
+
+.heroBullets {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.heroBullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: rgb(255 255 255 / 0.88);
+}
+
+.heroBulletIcon {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.12);
+  color: rgb(255 255 255 / 0.95);
+}
+
+.heroTrust {
+  margin-top: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgb(255 255 255 / 0.62);
+  max-width: 20rem;
+}
+
+.heroTrustDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgb(134 239 172 / 0.85);
+  box-shadow: 0 0 10px rgb(134 239 172 / 0.45);
+}
+
+.heroBack {
+  margin-top: 1.5rem;
+}
+
+.heroBackLink {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgb(255 255 255 / 0.88);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.heroBackLink:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.orb1,
+.orb2,
+.orb3 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb1 {
+  width: 200px;
+  height: 200px;
+  right: -52px;
+  top: 10%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgb(255 255 255 / 0.12),
+    transparent 66%
+  );
+}
+
+.orb2 {
+  width: 260px;
+  height: 260px;
+  left: -90px;
+  bottom: -48px;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgb(45 106 79 / 0.4),
+    transparent 72%
+  );
+}
+
+.orb3 {
+  width: 140px;
+  height: 140px;
+  right: 14%;
+  bottom: 14%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgb(255 255 255 / 0.06),
+    transparent 68%
+  );
+}
+
+.formPane {
+  flex: 1 1 56%;
+  padding: 2.5rem 2.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, #fff 0%, #fafcfb 100%);
+  max-height: calc(100svh - 5rem);
+  overflow-y: auto;
+}
+
+.formInner {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.formWide {
+  max-width: 460px;
+}
+
+.formHeader {
+  margin-bottom: 1.75rem;
+}
+
+.brandMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 1.5rem;
+}
+
+.brandMarkGlyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 10px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(145deg, #1b4332, #0d2818);
+  box-shadow: 0 2px 8px rgb(27 67 50 / 0.25);
+}
+
+.brandMarkText {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.formTitle {
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.formSubtitle {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #64748b;
+  max-width: 36rem;
+}
+
+.bodyText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.formFooter {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(15 23 42 / 0.06);
+}
+
+.pageLegal {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.pageLegal a {
+  color: #1b4332;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pageLegal a:hover {
+  text-decoration: underline;
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 0.4rem;
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 0.875rem;
+  color: #94a3b8;
+  pointer-events: none;
+  display: flex;
+}
+
+.field {
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.875rem 0 2.65rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.field::placeholder {
+  color: #94a3b8;
+}
+
+.field:hover {
+  border-color: #cbd5e1;
+}
+
+.field:focus {
+  border-color: #1b4332;
+  box-shadow: 0 0 0 3px rgb(27 67 50 / 0.14);
+}
+
+.fieldPassword {
+  padding-right: 4.75rem;
+}
+
+.togglePw {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.togglePw:hover {
+  color: #1b4332;
+  background: rgb(27 67 50 / 0.06);
+}
+
+.rowBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.125rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember input {
+  accent-color: #1b4332;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+}
+
+.linkMuted {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1b4332;
+  text-decoration: none;
+}
+
+.linkMuted:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btnPrimary {
+  width: 100%;
+  margin-top: 1.375rem;
+  height: 2.875rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  background: linear-gradient(180deg, #1b4332 0%, #153d30 100%);
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.12) inset,
+    0 4px 14px rgb(27 67 50 / 0.28);
+  transition: filter 0.15s ease, transform 0.12s ease;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.btnPrimary:active:not(:disabled) {
+  transform: scale(0.992);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin: 1.375rem 0 1.125rem;
+  color: #94a3b8;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+.btnOutline {
+  width: 100%;
+  height: 2.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background: #fff;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.badgeSoon {
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  background: rgb(15 23 42 / 0.06);
+  color: #64748b;
+}
+
+.btnOutline:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+.btnOutline:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.footerNote {
+  margin: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.footerNote a {
+  font-weight: 700;
+  color: #1b4332;
+  text-decoration: none;
+}
+
+.footerNote a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.error {
+  margin-top: 0.875rem;
+}
+
+.errorBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.875rem;
+  padding: 0.75rem 0.875rem;
+  border-radius: 12px;
+  border: 1px solid rgb(239 68 68 / 0.25);
+  background: rgb(254 242 242 / 0.95);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #b91c1c;
+}
+
+.fieldBlock {
+  margin-top: 1.125rem;
+}
+
+.fieldBlockFirst {
+  margin-top: 0;
+}
+
+.fieldHint {
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.roleFieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.375rem;
+}
+
+.roleLegend {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 0.65rem;
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.625rem;
+}
+
+.roleBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.roleBtn:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.roleBtnActive {
+  border-color: #1b4332;
+  background: rgb(240 253 250 / 0.85);
+  box-shadow: 0 0 0 2px rgb(27 67 50 / 0.12);
+}
+
+.roleBtnRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.roleBtnIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 8px;
+  background: rgb(15 23 42 / 0.05);
+  color: #1b4332;
+}
+
+.roleBtnActive .roleBtnIcon {
+  background: rgb(27 67 50 / 0.12);
+}
+
+.roleBtnTitle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.roleBtnHint {
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  color: #64748b;
+}
+
+.roleBtnTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    min-height: unset;
+    border-radius: 16px;
+  }
+
+  .hero {
+    flex: none;
+    min-height: auto;
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .heroContent {
+    max-width: none;
+  }
+
+  .heroBullets {
+    margin-top: 0.75rem;
+  }
+
+  .heroTrust {
+    margin-top: 1rem;
+  }
+
+  .formPane {
+    padding: 1.75rem 1.5rem 2rem;
+    max-height: none;
+  }
+
+  .formHeader {
+    margin-bottom: 1.5rem;
+  }
+
+  .brandMark {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .roleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roleBtnHint {
+    padding-left: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(16 185 129 / 0.08), transparent),
+      #0f172a;
+  }
+
+  .card {
+    background: #1e293b;
+    border-color: rgb(148 163 184 / 0.12);
+    box-shadow:
+      0 24px 48px -12px rgb(0 0 0 / 0.45),
+      0 0 0 1px rgb(255 255 255 / 0.04) inset;
+  }
+
+  .formPane {
+    background: linear-gradient(180deg, #1e293b 0%, #172033 100%);
+  }
+
+  .brandMarkText {
+    color: #f1f5f9;
+  }
+
+  .formTitle {
+    color: #f8fafc;
+  }
+
+  .formSubtitle {
+    color: #94a3b8;
+  }
+
+  .bodyText {
+    color: #94a3b8;
+  }
+
+  .fieldLabel,
+  .roleLegend {
+    color: #cbd5e1;
+  }
+
+  .field {
+    background: rgb(15 23 42 / 0.55);
+    border-color: #475569;
+    color: #f1f5f9;
+  }
+
+  .field::placeholder {
+    color: #64748b;
+  }
+
+  .field:hover {
+    border-color: #64748b;
+  }
+
+  .field:focus {
+    border-color: #34d399;
+    box-shadow: 0 0 0 3px rgb(52 211 153 / 0.18);
+  }
+
+  .divider::before,
+  .divider::after {
+    background: linear-gradient(90deg, transparent, #475569, transparent);
+  }
+
+  .btnOutline {
+    background: rgb(15 23 42 / 0.4);
+    color: #cbd5e1;
+    border-color: #475569;
+  }
+
+  .btnOutline:hover:not(:disabled) {
+    background: #334155;
+    color: #f1f5f9;
+  }
+
+  .badgeSoon {
+    background: rgb(255 255 255 / 0.08);
+    color: #94a3b8;
+  }
+
+  .footerNote {
+    color: #94a3b8;
+  }
+
+  .footerNote a {
+    color: #6ee7b7;
+  }
+
+  .linkMuted {
+    color: #6ee7b7;
+  }
+
+  .inputIcon {
+    color: #64748b;
+  }
+
+  .remember {
+    color: #cbd5e1;
+  }
+
+  .roleBtn {
+    background: rgb(15 23 42 / 0.45);
+    border-color: #475569;
+  }
+
+  .roleBtn:hover {
+    background: #1e293b;
+    border-color: #64748b;
+  }
+
+  .roleBtnActive {
+    border-color: #34d399;
+    background: rgb(15 23 42 / 0.85);
+    box-shadow: 0 0 0 2px rgb(52 211 153 / 0.2);
+  }
+
+  .roleBtnTitle {
+    color: #f1f5f9;
+  }
+
+  .roleBtnHint {
+    color: #94a3b8;
+  }
+
+  .roleBtnIcon {
+    background: rgb(255 255 255 / 0.06);
+    color: #6ee7b7;
+  }
+
+  .togglePw {
+    color: #94a3b8;
+  }
+
+  .togglePw:hover {
+    color: #6ee7b7;
+    background: rgb(52 211 153 / 0.1);
+  }
+
+  .formFooter {
+    border-top-color: rgb(148 163 184 / 0.12);
+  }
+
+  .pageLegal {
+    color: #64748b;
+  }
+
+  .pageLegal a {
+    color: #6ee7b7;
+  }
+
+  .errorBox {
+    background: rgb(127 29 29 / 0.25);
+    border-color: rgb(248 113 113 / 0.35);
+    color: #fecaca;
+  }
+}
