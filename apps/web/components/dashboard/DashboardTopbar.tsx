@@ -131,12 +131,12 @@ export function DashboardTopbar({
   const searchPlaceholder = searchPlaceholderForVariant(variant);
 
   return (
-    <header className="sticky top-0 z-30 flex min-h-14 shrink-0 flex-wrap items-center gap-2 border-b border-white/10 bg-[#0B111B]/90 px-2 py-1.5 backdrop-blur-xl sm:gap-3 sm:px-4 sm:py-0">
+    <header className="sticky top-0 z-30 flex min-h-14 shrink-0 flex-wrap items-center gap-2 border-b border-emerald-500/10 bg-background/90 px-2 py-1.5 backdrop-blur-xl sm:gap-3 sm:px-4 sm:py-0">
       <Button
         type="button"
         variant="ghost"
         size="icon"
-        className="shrink-0 text-slate-300 hover:bg-white/5 hover:text-white lg:hidden"
+        className="shrink-0 text-muted-foreground hover:bg-white/5 hover:text-foreground lg:hidden"
         onClick={onOpenMobileNav}
         aria-label="Open menu"
       >
@@ -147,7 +147,7 @@ export function DashboardTopbar({
         type="button"
         variant="ghost"
         size="icon"
-        className="hidden h-9 w-9 shrink-0 text-slate-400 hover:bg-white/5 hover:text-[#00C853] lg:flex"
+        className="hidden h-9 w-9 shrink-0 text-muted-foreground hover:bg-white/5 hover:text-primary lg:flex"
         onClick={onToggleCollapse}
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
@@ -159,13 +159,13 @@ export function DashboardTopbar({
       </Button>
 
       <div className="relative min-w-0 flex-1 basis-[min(100%,12rem)] md:max-w-md lg:max-w-lg">
-        <Search className="pointer-events-none absolute left-3 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-slate-500" />
+        <Search className="pointer-events-none absolute left-3 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         {searchHref ? (
           <Link href={searchHref} className="block">
             <Input
               readOnly
               placeholder={searchPlaceholder}
-              className="h-10 cursor-pointer border-white/10 bg-[#1F2937]/80 pl-10 text-sm text-slate-100 placeholder:text-slate-500 focus-visible:ring-[#00C853]/40"
+              className="h-10 cursor-pointer border-primary/20 bg-card/80 pl-10 text-sm text-foreground placeholder:text-muted-foreground focus-visible:ring-primary/40"
               aria-label="Open search"
             />
           </Link>
@@ -173,7 +173,7 @@ export function DashboardTopbar({
           <Input
             readOnly
             placeholder={searchPlaceholder}
-            className="h-10 border-white/10 bg-[#1F2937]/80 pl-10 text-sm text-slate-100 placeholder:text-slate-500"
+            className="h-10 border-primary/20 bg-card/80 pl-10 text-sm text-foreground placeholder:text-muted-foreground"
             aria-label="Search (coming soon)"
           />
         )}
@@ -182,7 +182,7 @@ export function DashboardTopbar({
       {variant === "landlord" ? (
         <Link
           href="/landlord/listings/new"
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#00C853] px-3 py-2 text-sm font-semibold text-[#0B111B] shadow-lg shadow-[#00C853]/20 transition hover:bg-[#00e05c] sm:px-4"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition hover:shadow-lg hover:shadow-primary/50 hover:brightness-110 sm:px-4"
           aria-label="Add property"
         >
           <Plus className="h-4 w-4" />

@@ -40,14 +40,14 @@ export function DashboardSidebar({
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-white/10 bg-[#121a26]/95 shadow-2xl shadow-black/40 backdrop-blur-xl transition-[width,transform] duration-200 ease-out lg:static lg:translate-x-0",
+        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-emerald-500/10 bg-card/95 shadow-2xl shadow-black/40 backdrop-blur-xl transition-[width,transform] duration-200 ease-out lg:static lg:translate-x-0",
         collapsed ? "w-[4.5rem]" : "w-60",
         mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
       )}
     >
       <div
         className={cn(
-          "flex h-14 shrink-0 items-center border-b border-white/10 px-3",
+          "flex h-14 shrink-0 items-center border-b border-emerald-500/10 px-3",
           collapsed ? "justify-center" : "justify-start",
         )}
       >
@@ -58,7 +58,7 @@ export function DashboardSidebar({
             className="min-w-0 truncate text-left"
           >
             <RentDirectLogo size="sm" />
-            <span className="mt-1.5 block text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+            <span className="mt-1.5 block text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
               {roleLabel}
             </span>
           </Link>
@@ -78,11 +78,11 @@ export function DashboardSidebar({
         {sections.map((section, si) => (
           <div key={section.title || `section-${si}`}>
             {!collapsed && section.title ? (
-              <p className="mb-1.5 px-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <p className="mb-1.5 px-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
                 {section.title}
               </p>
             ) : collapsed && si > 0 ? (
-              <div className="mx-auto mb-2 mt-1 h-px w-8 bg-white/10" aria-hidden />
+              <div className="mx-auto mb-2 mt-1 h-px w-8 bg-emerald-500/20" aria-hidden />
             ) : null}
             <ul className="space-y-0.5">
               {section.items.map((item) => {
@@ -93,10 +93,10 @@ export function DashboardSidebar({
                     href={item.href}
                     onClick={onCloseMobile}
                     className={cn(
-                      "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-sm font-medium transition-colors",
+                      "group flex items-center gap-3 rounded-lg px-2.5 py-2 text-sm font-medium transition-colors",
                       active
-                        ? "bg-[#00C853] text-[#0B111B] shadow-lg shadow-[#00C853]/25"
-                        : "text-slate-300 hover:bg-white/5 hover:text-white",
+                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
+                        : "text-muted-foreground hover:bg-white/5 hover:text-foreground",
                       collapsed && "justify-center px-0",
                     )}
                   >
